@@ -1,0 +1,75 @@
+#######################################
+# Syntax Coloring Map For E32.h
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+E32	KEYWORD1
+E32Device	KEYWORD1
+E32Data	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+sendMessage	KEYWORD2
+getMessage	KEYWORD2
+receiveComplete	KEYWORD2
+#######################################
+# Instances (KEYWORD2)
+#######################################
+dataLen	KEYWORD2
+dataPtr	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+Boradcast_addr	LITERAL1
+Mode_Normal	LITERAL1
+Mode_Wake_Up	LITERAL1
+Mode_Power_Saving	LITERAL1
+Mode_Sleep	LITERAL1
+Para_Save	LITERAL1
+Para_One	LITERAL1
+pbit_8N1	LITERAL1
+pbit_8O1	LITERAL1
+pbit_8E1	LITERAL1
+brate_1200	LITERAL1
+brate_2400	LITERAL1
+brate_4800	LITERAL1
+brate_9600	LITERAL1
+brate_19200	LITERAL1
+brate_38400	LITERAL1
+brate_57600	LITERAL1
+brate_115200	LITERAL1
+adrate_0k3	LITERAL1
+adrate_1k2	LITERAL1
+adrate_2k4	LITERAL1
+adrate_4k8	LITERAL1
+adrate_9k6	LITERAL1
+adrate_19k2	LITERAL1
+Transparent	LITERAL1
+Fixed	LITERAL1
+open_collector	LITERAL1
+push_pull	LITERAL1
+WUTms250	LITERAL1
+WUTms500	LITERAL1
+WUTms750	LITERAL1
+WUTms1000	LITERAL1
+WUTms1250	LITERAL1
+WUTms1500	LITERAL1
+WUTms1750	LITERAL1
+WUTms2000	LITERAL1
+FECoff	LITERAL1
+FECon	LITERAL1
+TPdbm20	LITERAL1
+TPdbm17	LITERAL1
+TPdbm14	LITERAL1
+TPdbm10	LITERAL1
+
+
+
+
+

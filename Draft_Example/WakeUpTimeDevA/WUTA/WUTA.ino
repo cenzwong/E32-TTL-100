@@ -1,0 +1,53 @@
+#include "E32.h"
+//#include "config.h"
+
+E32 myE32; // to be config in config.h
+//target device address and Channel
+E32Device deviceA = {0xAAAA, 0x17};
+E32Device deviceB = {0xBBBB, 0x17};
+
+uint8_t dataA[] = {0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9, 0x10,\
+                     0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x20,\
+                     0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0xAA, 0x1E, 0x1F, 0x20};
+
+uint8_t dataB[] = {0xB1, 0xB2, 0xB3, 0xB4, 0xB6, 0xB7, 0xB8, 0xB9, 0x10,\
+                    0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x20,\
+                    0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0xBB };
+
+uint8_t dataC[] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xAA, 0xBB, 0xCC};
+
+E32Data FrameA = {dataA ,sizeof(dataA)};
+E32Data FrameB = {dataB ,sizeof(dataB)};
+E32Data FrameC = {dataC, sizeof(dataC)};
+E32Data inFrame = {};
+
+uint32_t StartTime = 0;
+uint32_t CurrentTime = 0;
+uint32_t ElapsedTime = 0;
+
+
+
+void setup() {
+  // put your setup code here, to run once:s
+  Serial.begin(9600);
+  Serial.write(0xFF);
+  myE32.begin();
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if(Serial.available()>0){
+      char inChar = Serial.read();
+        if(inChar == 'a'){
+          myE32.sendMessage(deviceB, FrameA);
+          Serial.write(0x0F);
+        }
+    }
+
+  if(myE32.receiveComplete()){
+    inFrame = myE32.getMessage();
+      for(uint8_t i = 0 ; i < inFrame.dataLen; i++){
+        Serial.write(inFrame.dataPtr[i]);
+       }
+    }
+}
