@@ -4,6 +4,7 @@
 //============
 
 This Library rely on the config.h to config E32 module, therefore, the tranditional way to include arduino library is not work
+You may have a look on the E32_Lib.ino on how to start with
 
 Step 1: 
 Open your sketch
