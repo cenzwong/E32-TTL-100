@@ -18,7 +18,7 @@ Step 3:
 Step 4
 create E32 object, E32Device and E32Data.
 Some setting need to be change in config.h
-(you may refer to the example)
+(you may refer to the example: E32_Lib.ino)
 
 
 ref: http://www.ebyte.com/en/product-view-news.aspx?id=130
